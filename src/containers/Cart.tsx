@@ -9,6 +9,8 @@ import { changeCartQuantity, clearCart, removeCartItem } from "../stores/slices/
 import storeApi from "../services/storeApi.service";
 import socketConnect from "../services/socket.service";
 
+import "./Product/product.scss";
+
 interface CartProps {}
 
 const Cart = (props: CartProps) => {
@@ -36,10 +38,10 @@ const Cart = (props: CartProps) => {
     };
 
     const onFinish = (data: any) => {
-        socketConnect.emit("add-to-cart-client", "hello");
-        // data.products = carts.products;
-        // data.price = carts.totalPrice;
-        // orderByCustomer(data);
+        data.products = carts.products;
+        data.price = carts.totalPrice;
+        socketConnect.emit("add-notification-client", `Có đơn hàng mới từ ${data.fullname}`);
+        orderByCustomer(data);
     };
 
     return (

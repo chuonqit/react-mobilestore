@@ -3,7 +3,8 @@ import { refreshToken } from "../stores/slices/auth.slice";
 import { BaseQueryFn, FetchArgs, fetchBaseQuery, FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 
 export const baseQuery = fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/",
+    baseUrl: "https://nodejs-mobilestore.vercel.app/api/",
+    // baseUrl: "http://localhost:5000/api/",
     prepareHeaders: (headers, { getState }) => {
         const profile = (getState() as RootState).auth;
         if (profile.user) {
