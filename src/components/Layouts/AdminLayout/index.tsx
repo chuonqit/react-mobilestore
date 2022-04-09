@@ -6,12 +6,21 @@ import { ContentContainer, ContentWrapper, CssBaseLine, LayoutWrapper, Logo, Top
 import { BiCaretDown } from "react-icons/bi";
 import { clearAuth } from "../../../stores/slices/auth.slice";
 import { useAppDispatch, useAppSelector } from "../../../stores/hooks";
+import socketConnect from "../../../services/socket.service";
 
 const { Header, Content } = Layout;
 
 const AdminLayout = () => {
     const dispatch = useAppDispatch();
     const { user } = useAppSelector((state) => state.auth);
+
+    React.useEffect(() => {
+        console.log(
+            socketConnect.on("add-to-cart-server", (data) => {
+                console.log(data);
+            })
+        );
+    }, []);
 
     const logout = () => {
         message.success("Đăng xuất thành công");

@@ -82,7 +82,7 @@ const CategoryForm = ({ form, categorySelected, setCategorySelected, imageUrl, s
     const onFinish = (data: CategoryFormType) => {
         if (categorySelected) {
             data.image = {
-                url: "",
+                url: form.getFieldsValue().image,
                 base64: imageUrl.base64!,
             };
             updateCategory({ categoryId: categorySelected, formData: data });

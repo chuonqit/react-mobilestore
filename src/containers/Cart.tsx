@@ -7,6 +7,7 @@ import { BsFillCartXFill } from "react-icons/bs";
 import { useAppDispatch, useAppSelector } from "../stores/hooks";
 import { changeCartQuantity, clearCart, removeCartItem } from "../stores/slices/cart.slice";
 import storeApi from "../services/storeApi.service";
+import socketConnect from "../services/socket.service";
 
 interface CartProps {}
 
@@ -35,9 +36,10 @@ const Cart = (props: CartProps) => {
     };
 
     const onFinish = (data: any) => {
-        data.products = carts.products;
-        data.price = carts.totalPrice;
-        orderByCustomer(data);
+        socketConnect.emit("add-to-cart-client", "hello");
+        // data.products = carts.products;
+        // data.price = carts.totalPrice;
+        // orderByCustomer(data);
     };
 
     return (

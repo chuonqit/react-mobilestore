@@ -93,11 +93,13 @@ const OrdersList = (props: OrdersListProps) => {
             dataIndex: "_id",
             fixed: "right",
             width: 90,
-            render: (orderId: string) => (
+            render: (orderId: string, record: OrderType) => (
                 <Space size="small">
-                    <Popconfirm title="Bạn có chắc muốn xoá không?" onConfirm={() => handleDeleteOrder(orderId)} okText="Xoá" cancelText="Huỷ">
-                        <Button>Xoá</Button>
-                    </Popconfirm>
+                    {(record.status === "pending" || record.status === "confirm" || record.status === "shipping") && (
+                        <Popconfirm title="Bạn có chắc muốn xoá không?" onConfirm={() => handleDeleteOrder(orderId)} okText="Xoá" cancelText="Huỷ">
+                            <Button>Xoá</Button>
+                        </Popconfirm>
+                    )}
                 </Space>
             ),
         },

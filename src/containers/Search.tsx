@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import storeApi from "../services/storeApi.service";
 
+import "./Product/product.scss";
+
 const Search = () => {
     const navigate = useNavigate();
     const [searchParam] = useSearchParams();

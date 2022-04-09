@@ -91,7 +91,7 @@ const SlidersForm = ({ form, sliderSelected, setSliderSelected, imageUrl, setIma
     const onFinish = (data: SliderFormType) => {
         if (sliderSelected) {
             data.image = {
-                url: "",
+                url: form.getFieldsValue().image,
                 base64: imageUrl.base64!,
             };
             updateSlider({ sliderId: sliderSelected, formData: data });
