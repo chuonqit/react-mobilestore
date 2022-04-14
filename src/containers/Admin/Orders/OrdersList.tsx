@@ -95,7 +95,7 @@ const OrdersList = (props: OrdersListProps) => {
             width: 90,
             render: (orderId: string, record: OrderType) => (
                 <Space size="small">
-                    {(record.status === "pending" || record.status === "confirm" || record.status === "shipping") && (
+                    {record.status === "pending" && (
                         <Popconfirm title="Bạn có chắc muốn xoá không?" onConfirm={() => handleDeleteOrder(orderId)} okText="Xoá" cancelText="Huỷ">
                             <Button>Xoá</Button>
                         </Popconfirm>

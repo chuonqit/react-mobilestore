@@ -6,10 +6,12 @@ import storage from "redux-persist/lib/storage";
 import authReducer from "./slices/auth.slice";
 import cartReducer from "./slices/cart.slice";
 import { adminApi, clientApi } from "../services/baseApi.service";
+import productsReducer from "./slices/products.slice";
 
 const reducers = combineReducers({
     [authReducer.name]: authReducer.reducer,
     [cartReducer.name]: cartReducer.reducer,
+    [productsReducer.name]: productsReducer.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
     [clientApi.reducerPath]: clientApi.reducer,
 });

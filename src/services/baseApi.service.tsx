@@ -5,7 +5,7 @@ import { baseQuery, baseQueryWithReauth } from "./configApi.service";
 export const adminApi = createApi({
     reducerPath: "adminApi",
     baseQuery: baseQueryWithReauth,
-    tagTypes: ["Categories", "Products", "ProductVariants", "Brands", "Configurations", "Orders", "Sliders"],
+    tagTypes: ["Categories", "Products", "ProductVariants", "Brands", "Configurations", "Orders", "Sliders", "Users"],
     endpoints: (builder) => ({
         fetchNotification: builder.mutation<NotificationType[], void>({
             query: () => "/notifications",

@@ -61,9 +61,6 @@ const AdminSider = () => {
                     <Menu.Item key="/admin/employees">
                         <Link to="/admin/employees">Quản lí nhân viên</Link>
                     </Menu.Item>
-                    <Menu.Item key="/admin/promotions">
-                        <Link to="/admin/promotions">Quản lí khuyến mãi</Link>
-                    </Menu.Item>
                 </MenuSub>
             </Menu>
         </Sidebar>

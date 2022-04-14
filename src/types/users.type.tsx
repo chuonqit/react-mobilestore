@@ -20,7 +20,20 @@ export type UserType = {
     fullname: string;
     firstName: string;
     lastName: string;
-    phoneNumber: string;
-    address: string;
     role: "ADMIN" | "MANAGER";
+};
+
+export type UserFormType = {
+    email: string;
+    password: string;
+    fullname: string;
+    role: "ADMIN" | "MANAGER";
+};
+
+export type UserExcelFormType = {
+    email: string;
+    password: string;
+    fullname: string;
+    phoneNumber: string;
+    role: string;
 };

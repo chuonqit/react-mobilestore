@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { PrivateRouter } from "./components/PrivateRouter";
 import { Card } from "antd";
+import productApi from "./services/products.service";
 
 const ShopLayout = React.lazy(() => import("./components/Layouts/ShopLayout"));
 const AdminLayout = React.lazy(() => import("./components/Layouts/AdminLayout"));
